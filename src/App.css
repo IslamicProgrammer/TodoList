@@ -1,0 +1,15 @@
+.ListGroupItem {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+h4 {
+  display: inline-block;
+}
+
+footer {
+  position: absolute;
+  top: 0;
+}
