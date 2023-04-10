@@ -39,7 +39,7 @@ export default class App extends Component {
     let todo = {
       id: this.state.id,
       todo: this.state.todo,
-      isComplite: false,
+      isComplete: false,
     };
 
     this.setState({
@@ -64,17 +64,17 @@ export default class App extends Component {
         if (item.id !== index) {
           return item;
         }
-        item.isComplite = !item.isComplite;
+        item.isComplete = !item.isComplete;
       }),
     });
     this.progress();
   };
 
-  complited = (indeks) => {
+  completed = (indeks) => {
     console.log(indeks);
     let filteredTodos = this.state.todos.filter((todo) => {
       if (indeks === todo.id) {
-        todo.isComplite = !todo.isComplite;
+        todo.isComplete = !todo.isComplete;
       }
       return todo;
     });
@@ -85,12 +85,12 @@ export default class App extends Component {
   };
 
   progress = () => {
-    let commplitedTodos = this.state.todos.filter((todo) => {
-      if (todo.isComplite) {
+    let completedTodos = this.state.todos.filter((todo) => {
+      if (todo.isComplete) {
         return todo;
       }
     });
-    let markedElements = commplitedTodos.length;
+    let markedElements = completedTodos.length;
     let allElements = this.state.todos.length;
     let progressLength = (markedElements * 100) / allElements;
     this.setState({
@@ -148,7 +148,7 @@ export default class App extends Component {
                       <ListGroupItem className="ListGroupItem" key={todo.id}>
                         <span
                           style={
-                            todo.isComplite
+                            todo.isComplete
                               ? { opacity: 0.7, textDecoration: "line-through" }
                               : { opacity: 1, textDecoration: "none" }
                           }
@@ -157,7 +157,7 @@ export default class App extends Component {
                         </span>
                         <h4
                           style={
-                            todo.isComplite
+                            todo.isComplete
                               ? { opacity: 0.7, textDecoration: "line-through" }
                               : { opacity: 1, textDecoration: "none" }
                           }
@@ -169,9 +169,9 @@ export default class App extends Component {
                             className="warningbtn"
                             size="md"
                             color="warning"
-                            onClick={() => this.complited(todo.id)}
+                            onClick={() => this.completed(todo.id)}
                           >
-                            Complite
+                            Complete
                           </Button>
                           <Button
                             color="danger"
@@ -185,7 +185,7 @@ export default class App extends Component {
                   } else {
                     return (
                       <UncontrolledAlert color="danger" className="alert my-2">
-                        Please type somthing
+                        Please type something
                       </UncontrolledAlert>
                     );
                   }
