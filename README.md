@@ -6,7 +6,7 @@ In the project directory, you can run:
 
 ### `yarn start`
 
-Runs the app on [http://localhost:3000](http://localhost:3000) in the development mode.\
+Runs the app on [http://localhost:3000](http://localhost:3000) in the development mode.
 
 ### `yarn test`
 
