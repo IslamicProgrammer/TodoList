@@ -126,14 +126,14 @@ export default class App extends Component {
             <Col mt={5} md="12" className="mx-auto">
               <InputGroup>
                 <Input
-                  placeholder="type your focus here"
+                  placeholder="Type your focus here"
                   onChange={this.setInput}
                   onKeyPress={this.enterClick}
                   value={this.state.todo}
                 />
                 <InputGroupAddon addonType="append">
                   <Button color="primary" onClick={this.addTodo}>
-                    add
+                    Add
                   </Button>
                 </InputGroupAddon>
               </InputGroup>
